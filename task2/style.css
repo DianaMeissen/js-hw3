@@ -1,0 +1,93 @@
+.container {
+	display: block;
+	max-width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+	background: #f5f7dc6e;
+	padding-bottom: 10px;
+}
+
+ul {
+	position: relative;
+	list-style: none;
+	margin: 0;
+	padding-top: 50px;
+	padding-left: 0;
+}
+
+li {
+	display: inline;
+    padding: 10px 20px;
+    font-size: 20px;
+    margin-left: -.26em;
+}
+
+li:hover {
+	border-top: 1px solid #00000036;
+	border-left: 1px solid #00000036;
+	border-right: 1px solid #00000036;
+    border-radius: 3px;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+}
+
+.bef {
+	position: absolute;
+	content: "";
+	background: #00000036;
+	height: 1px;
+    margin-top: 81px;
+    margin-left: 85px;
+	width: 204px;
+}
+
+.whatever {
+	margin-left: 0px;
+	width: 84px;
+}
+
+.whatever2 {
+	margin-left: 0px;
+	width: 176px;
+}
+
+.aft {
+	position: absolute;
+	content: "";
+	display: table;
+	background: #00000036;
+	height: 1px;
+    margin-top: 8px;
+    margin-left: 289px;
+	width: 680px;
+}
+
+.text {
+	text-decoration: none;
+	color: #3e51e2;
+    cursor: pointer;
+}
+
+.menu {
+	padding-left: 20px;
+}
+
+#pContext {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.changeWidth {
+	margin-left: 179px;
+	width: 790px;
+}
+
+.isActive {
+	border-top: 1px solid #00000036;
+	border-left: 1px solid #00000036;
+	border-right: 1px solid #00000036;
+    border-radius: 3px;
+    color: #000;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+}

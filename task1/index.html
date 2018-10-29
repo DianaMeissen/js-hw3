@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task1</title>
+	<style type="text/css">
+		.wrapper {
+			display: flex;
+			max-width: 2000px;
+			margin-right: 50px;
+			margin-left: 50px;
+			background: #ef7d296e;
+			padding-bottom: 30px;
+			padding-top: 30px;
+			margin-top: 50px;
+			justify-content: space-around;
+		}
+
+		.box {
+			width: 150px;
+			height: 150px;
+			border: 2px solid #000;
+			font-size: 20px;
+		}
+
+		input {
+			width: 80px;
+		}
+
+		#over {
+			background: #e4a1d34d;
+			box-shadow: none;
+			animation-duration: 2s;
+		}
+
+		#key {
+			background: #d881bc;
+		}
+
+		#click {
+			background: #9134d6c2;
+		}
+
+		#scroll {
+			animation-name: none;
+			animation-duration: 4s;
+			position: relative;
+			background: #2d3af1;
+			height: 150px;
+		}
+
+		#dblclick {
+			animation-name: none;
+    		animation-duration: 4s;
+    		position: relative;
+		}
+	
+		@keyframes scrolling {
+			0% {transform: scale(1.0);}
+			25% {transform: scale(1.25);}
+			50% {transform: scale(1.5);}
+			75% {transform: scale(1.75);}
+			100% {transform: scale(2.0);}
+		}
+
+		@keyframes example {
+		    0%   {left:0px; top:0px;}
+		    25%  {left:100px; top:0px;}
+		    50%  {left:100px; top:100px;}
+		    75%  {left:0px; top:100px;}
+		    100% {left:0px; top:0px;}
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="wrapper">
+		<div id="over" class="box">Focus on me</div>
+		<div id="key" class="box">Press arrows on keyboard
+			<input type="" name="">
+			<p id="context"></p></div>
+		<div id="click" class="box">Click and hold</div>
+		<div id="scroll" style="overflow-y:auto;" class="box">Scroll here
+			<p>s</p>
+			<p>s</p>
+			<p>s</p>
+			<p>s</p>
+			<p>s</p>
+			<p>s</p>
+			<p>s</p>
+			<p>s</p>
+			<p>s</p>
+			<p>s</p>
+			<p>s</p>
+			<p>s</p>
+			<p>You are the winner</p>
+		</div>
+		<div id="dblclick" class="box">DblClick on me</div>
+
+	</div>
+
+	<script type="text/javascript">
+		var over = document.querySelector('#over');
+		var key = document.querySelector('#key');
+		var click = document.querySelector('#click');
+		var scroll = document.querySelector('#scroll');
+		var dblclick = document.querySelector('#dblclick');
+		
+		over.addEventListener('mouseover', function () {
+			over.style.background = '#5d3be2';
+			over.style.boxShadow = 'inset 0 0 0 15px #dc21dc';
+		});
+
+		key.addEventListener('keydown', function() {
+			var el = window.event.keyCode;	
+			var elem = document.querySelector('#context');
+			if (el == '37') {
+				elem.innerHTML = 'LEFT'
+			} else if (el == '38') {
+				elem.innerHTML = 'UP'
+			} else if (el == '39') {
+				elem.innerHTML = 'RIGHT'
+			} else if (el == '40') {
+				elem.innerHTML = 'DOWN'
+			}
+		});
+
+		click.addEventListener('mousedown', function () {
+			click.style.background = 'yellow';
+		});
+
+		click.addEventListener('mouseup', function () {
+			click.style.background = '#9134d6c2';
+		});
+
+		window.onwheel = scroll.addEventListener('scroll', function () {
+			scroll.style.animationName = 'scrolling';	
+		});
+
+		dblclick.addEventListener('dblclick', function () {
+			dblclick.style.animationName = 'example';
+		});
+		
+
+	</script>
+</body>
+</html>
